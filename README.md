@@ -96,5 +96,3 @@ curl -X POST "http://127.0.0.1:8000/graph/run" -H "Content-Type: application/jso
 </ul>
 
 <hr>
-
-<p align="center"><small>Clean structure matters more than features — the project focuses on a minimal, well-documented engine and a working sample workflow.</small></p>
