@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "Agent Workflow Engine - Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Root",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Run Graph",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n  \\\"graph_id\\\": \\\"<graph_id>\\\",\\n  \\\"initial_state\\\": {\\n    \\\"code\\\": \"def foo():\\\\n    print(\\\\\"hello\\\\\")\\\\n\"\\n  }\\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/graph/run",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "graph",
+            "run"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Run State",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/graph/state/<run_id>",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "graph",
+            "state",
+            "<run_id>"
+          ]
+        }
+      }
+    },
+    {
+      "name": "WebSocket Stream (ws)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "ws://127.0.0.1:8000/ws/run/<run_id>",
+          "protocol": "ws",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "ws",
+            "run",
+            "<run_id>"
+          ]
+        }
+      }
+    }
+  ]
+}
